@@ -19,6 +19,7 @@ namespace _01_Dal.Dal
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConCC"].ToString());
             try
             {
+
                 using (IDbConnection db = conn)
                 {
                     return conn.Query<TipDocument>("sp_Tip_Documents", new { }, commandType: CommandType.StoredProcedure);
